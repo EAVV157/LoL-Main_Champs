@@ -1,0 +1,30 @@
+/* Adding style before all the elements */
+* {
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* SMALL DESKTOPS, LAPTOPS */
+@media (max-width: 1280px) {
+}
+/* SMALL LAPTOPS, LANDSCAPE TABLETS */
+@media (max-width: 1024px) {
+}
+/* TABLETS, LANDSCAPE PHONES */
+@media (max-width: 768px) {
+}
+/* PHONES, LANDSCAPE SMALL PHONES */
+@media (max-width: 640px) {
+}
+/* SMALL PHONES, LANDSCAPE TINY PHONES */
+@media (max-width: 480px) {
+}
+/* TINY PHONES */
+@media (max-width: 320px) {
+}
