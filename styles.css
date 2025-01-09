@@ -11,52 +11,268 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  background-color: linear-gradient(180deg, #0A1428, #091428);
-}
-
 h1,
 h2 {
-  font-family: 'Beufort';
+  font-family: "Beufort";
   font-weight: 500;
+  background: -webkit-linear-gradient(#f4ce52, #785a28);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+body {
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 p,
-input {
-  font-family: 'Spiegel';
+a,
+input,
+button {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Spiegel";
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+button,
+.pointer {
+  cursor: pointer;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+}
+
+.container {
+  width: 100%;
+  padding: 80px 0;
+}
+
+.row {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.landing-page {
+  /* background-color: #010A13; */
+  display: flex;
+  flex-direction: column;
 }
 
 /* ********** NAV BAR ********** */
 
-::placeholder {
-  color: #A09B8C;
+nav {
+  width: 100%;
+  max-width: 1280px;
+  height: 120px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-::-ms-input-placeholder {
-  color: #A09B8C;
+.main__container {
+  display: flex;
+  align-items: center;
 }
 
-/* .tooltip .tooltiptext {
+.main__logo--wrapper {
+  width: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.main__logo--img {
+  width: 100%;
+  vertical-align: middle;
+  /* Want to find how to fade the borders of the image */
+}
+
+.main__title {
+  font-weight: 700;
+  padding-left: 16px;
+}
+
+.nav__link--list {
+  position: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.nav__link {
+  height: 45px;
+  margin-right: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.nav__link:last-child {
+  margin-right: 0;
+}
+
+.valorant {
+  height: 65px;
+}
+
+.nav__link--anchor {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.riot__logo--wrapper {
+  width: 40px;
+  margin-right: 12px;
+}
+
+.valorant .riot__logo--wrapper {
+  width: 60px;
+}
+
+.riot__logo--img {
+  width: 100%;
+}
+
+.riot__link--wrapper {
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.valorant .riot__link--wrapper {
+  width: 150px;
+}
+
+.riot__link--img {
+  width: 100%;
+}
+
+.valorant .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 160px;
   background-color: black;
   color: #fff;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
   position: absolute;
-  z-index: 1;
-  top: 110%;
-  left: 50%;
+  z-index: 5;
+  top: 88px;
+  right: 68px;
   margin-left: -60px;
   opacity: 0;
-  transition: opacity 300ms;
+  transition: opacity 300ms ease, visibility 300ms ease;
 }
 
-.tooltip:hover .tooltiptext {
+.valorant:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.link-white,
+.link-red {
+  filter: drop-shadow(0px 100px 0 #ffffff);
+  transform: translateY(-100px);
+}
+
+.nav__link:hover .link-white {
+  filter: drop-shadow(0px 100px 0 #c89b3c);
+}
+
+.nav__link:hover .link-red {
+  filter: drop-shadow(0px 100px 0 #ff4655);
+}
+
+/* ********** HEADER ********** */
+
+.header__title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.header__game-name {
+  width: 100%;
+  height: 80px;
+  background-color: #3c3c41;
+  border-radius: 200px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.search__region--wrapper {
+  width: calc(40% - 61px);
+  padding-left: 32px;
+  padding-right: 24px;
+}
+
+.header__game-name::before {
+  content: "";
+  position: relative;
+  left: calc(40% - 73px);
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(#3c3c41, #999999, #ffffff, #999999, #3c3c41);
+}
+
+.search__name--wrapper {
+  width: 60%;
+}
+
+.search__submit {
+  width: 60px;
+  height: 80px;
+  font-size: 32px;
+  background-color: transparent;
+  border-radius: 0 100% 100% 0;
+  border: none;
+}
+
+.search__para {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.search__input {
+  color: #dfdfdf;
+  width: 100%;
+  padding: 2px 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* ::placeholder {
+  color: #5B5A56;
+}
+
+::-ms-input-placeholder {
+  color: #5B5A56;
 } */
+
+/* ********** FOOTER ********** */
 
 /* SMALL DESKTOPS, LAPTOPS */
 @media (max-width: 1280px) {

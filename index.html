@@ -17,48 +17,86 @@
   <body>
     <section class="landing-page">
       <nav>
-        <figure class="logo__wrapper">
-          <img src="assets/main_champ-logo.ico" alt="" class="logo__img" />
-        </figure>
+        <div class="main__container">
+          <figure class="main__logo--wrapper">
+            <img
+              src="assets/main_champ-logo.ico"
+              alt=""
+              class="main__logo--img"
+            />
+          </figure>
+          <h1 class="main__title">Main Champions List</h1>
+        </div>
         <ul class="nav__link--list">
           <li class="nav__link">
-            <figure class="logo__wrapper">
-              <img src="assets/lol_logo.svg" alt="" class="logo__img" />
-            </figure>
-            <a
-              href=""
-              class="nav__link--anchor link__hover-effect link__hover-effect--gold pointer"
-              >League of Legends</a
-            >
+            <a href="" class="nav__link--anchor">
+              <figure class="riot__logo--wrapper">
+                <img
+                  class="riot__logo--img link-white"
+                  src="assets/lol_logo.svg"
+                  alt=""
+                />
+              </figure>
+              <figure class="riot__link--wrapper">
+                <img
+                  class="riot__link--img link-white"
+                  src="assets/lol_logo_horizontal.svg"
+                  alt=""
+                />
+              </figure>
+            </a>
           </li>
-          <li class="nav__link">
-            <figure class="logo__wrapper">
-              <img src="assets/valorant_logo.svg" alt="" class="logo__img" />
-            </figure>
-            <a
-              href=""
-              class="nav__link--anchor link__hover-effect link__hover-effect--gold not-allowed"
-              >Valorant</a
-            >
+          <li class="nav__link valorant">
+            <span class="tooltiptext">Next to be featured!</span>
+            <a class="nav__link--anchor  not-allowed">
+              <figure class="riot__logo--wrapper">
+                <img
+                class="riot__logo--img link-red"
+                src="assets/valorant_logo.svg"
+                alt=""
+                />
+              </figure>
+              <figure class="riot__link--wrapper">
+                <img
+                class="riot__link--img link-red"
+                src="assets/valorant_logo_horizontal.png"
+                alt=""
+                />
+              </figure>
+            </a>
           </li>
         </ul>
       </nav>
-      <header class="header__content container">
-        <div class="header__row row">
-          <h1 class="header__title">Search for your Account</h1>
-          <form id="game-name__form" action="">
-            <div class="search__wrapper">
-              <p class="search__region"><small>Region</small></p>
-              <input name="region" type="text" placeholder="NA">
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="header__champions--display">
+
             </div>
-            <div class="search__wrapper">
-              <p class="search__summoner-name"><small>Search</small></p>
-              <input name="game-name" type="text" placeholder="Summoner Name + #TAG">
-            </div>
-            <button id="game-name__submit" class="form__submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
+            <h1 class="header__title">Search for your Account</h1>
+            <form id="game-name__form" class="header__game-name" action="">
+              <div class="search__region--wrapper">
+                <p class="search__para"><small>Region</small></p>
+                <input 
+                  class="search__input"
+                  name="region"
+                  type="text"
+                  placeholder="NA" />
+              </div>
+              <div class="search__name--wrapper">
+                <p class="search__para"><small>Search</small></p>
+                <input
+                  class="search__input"
+                  name="game-name"
+                  type="text"
+                  placeholder="Summoner Name + #TAG"
+                />
+              </div>
+              <button id="game-name__submit" class="search__submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
         </div>
       </header>
     </section>
