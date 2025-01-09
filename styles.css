@@ -15,8 +15,8 @@ h1,
 h2 {
   font-family: "Beufort";
   font-weight: 500;
-  background: -webkit-linear-gradient(#f4ce52, #785a28);
-  -webkit-background-clip: text;
+  background: linear-gradient(#f4ce52, #785a28);
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -29,7 +29,7 @@ h2 {
 }
 
 body {
-  background-color: gray;
+  background-color: #010A13;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -73,7 +73,6 @@ button,
 }
 
 .landing-page {
-  /* background-color: #010A13; */
   display: flex;
   flex-direction: column;
 }
@@ -82,10 +81,11 @@ button,
 
 nav {
   width: 100%;
-  max-width: 1280px;
-  height: 120px;
+  height: 140px;
   margin: 0 auto;
   padding: 0 32px;
+  background-color: #1E282D;
+  border-bottom: 8px solid #C89B3C;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,7 +98,7 @@ nav {
 
 .main__logo--wrapper {
   width: 100px;
-  border-radius: 50%;
+  border-radius: 25%;
   overflow: hidden;
 }
 
@@ -178,7 +178,7 @@ nav {
   padding: 5px 0;
   position: absolute;
   z-index: 5;
-  top: 88px;
+  top: 96px;
   right: 68px;
   margin-left: -60px;
   opacity: 0;
@@ -192,16 +192,18 @@ nav {
 
 .link-white,
 .link-red {
-  filter: drop-shadow(0px 100px 0 #ffffff);
-  transform: translateY(-100px);
+  filter: invert(100%) sepia(1%) saturate(2%) hue-rotate(285deg) brightness(104%) contrast(101%);
+  transition: filter 300ms ease, scale 300ms ease;
 }
 
 .nav__link:hover .link-white {
-  filter: drop-shadow(0px 100px 0 #c89b3c);
+  filter: invert(91%) sepia(30%) saturate(3043%) hue-rotate(326deg) brightness(83%) contrast(85%);
+  scale: 1.05;
 }
 
 .nav__link:hover .link-red {
-  filter: drop-shadow(0px 100px 0 #ff4655);
+  filter: invert(43%) sepia(70%) saturate(3225%) hue-rotate(328deg) brightness(99%) contrast(105%);
+  scale: 1.05;
 }
 
 /* ********** HEADER ********** */
