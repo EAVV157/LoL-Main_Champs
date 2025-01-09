@@ -5,21 +5,110 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Find Your Account</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link rel="stylesheet" href="./styles.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
 
     <script
       src="https://kit.fontawesome.com/fe84bccaa2.js"
       crossorigin="anonymous"
     ></script>
+    <script src="index.js"></script>
   </head>
   <body>
-    
+    <section class="landing-page">
+      <nav>
+        <figure class="logo__wrapper">
+          <img src="assets/main_champ-logo.ico" alt="" class="logo__img" />
+        </figure>
+        <ul class="nav__link--list">
+          <li class="nav__link">
+            <figure class="logo__wrapper">
+              <img src="assets/lol_logo.svg" alt="" class="logo__img" />
+            </figure>
+            <a
+              href=""
+              class="nav__link--anchor link__hover-effect link__hover-effect--gold pointer"
+              >League of Legends</a
+            >
+          </li>
+          <li class="nav__link">
+            <figure class="logo__wrapper">
+              <img src="assets/valorant_logo.svg" alt="" class="logo__img" />
+            </figure>
+            <a
+              href=""
+              class="nav__link--anchor link__hover-effect link__hover-effect--gold not-allowed"
+              >Valorant</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <header class="header__content container">
+        <div class="header__row row">
+          <h1 class="header__title">Search for your Account</h1>
+          <form id="game-name__form" action="">
+            <div class="search__wrapper">
+              <p class="search__region"><small>Region</small></p>
+              <input name="region" type="text" placeholder="NA">
+            </div>
+            <div class="search__wrapper">
+              <p class="search__summoner-name"><small>Search</small></p>
+              <input name="game-name" type="text" placeholder="Summoner Name + #TAG">
+            </div>
+            <button id="game-name__submit" class="form__submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </div>
+      </header>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <h2 class="footer__subtitle">
+            <span class="gold">LoL</span> Main Champions
+          </h2>
+          <div class="footer__social--list">
+            <a
+              href="https://github.com/EAVV157"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/edgar-vargas-89b114190/"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a
+              href="./assets/Edgar-Vargas.pdf"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+          </div>
+          <p class="footer__copyright">
+            Copyright &copy; 2025 EAV. All Rights Reserved.<br />
+            This project was created under Riot Games' policy, using assets
+            owned by Riot Games. Riot Games does not endorse, sponsor or reflect
+            the views or opinions of Riot Games or anyone officially in
+            producing or managing League of Legends.<br />
+            League of Legends and Riot Games are trademarks or registered
+            trademarks of Riot Games, Inc. League of Legends &copy Riot Games,
+            Inc.
+          </p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

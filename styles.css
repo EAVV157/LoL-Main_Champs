@@ -1,6 +1,7 @@
-/* Adding style before all the elements */
+/* ********** GENERAL CSS ********** */
+@import url(fonts.css);
+
 * {
-  font-family: "Roboto", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -9,6 +10,53 @@
 html {
   scroll-behavior: smooth;
 }
+
+body {
+  background-color: linear-gradient(180deg, #0A1428, #091428);
+}
+
+h1,
+h2 {
+  font-family: 'Beufort';
+  font-weight: 500;
+}
+
+p,
+input {
+  font-family: 'Spiegel';
+}
+
+/* ********** NAV BAR ********** */
+
+::placeholder {
+  color: #A09B8C;
+}
+
+::-ms-input-placeholder {
+  color: #A09B8C;
+}
+
+/* .tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 110%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+} */
 
 /* SMALL DESKTOPS, LAPTOPS */
 @media (max-width: 1280px) {
