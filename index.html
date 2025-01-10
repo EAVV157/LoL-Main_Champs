@@ -12,7 +12,7 @@
       src="https://kit.fontawesome.com/fe84bccaa2.js"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
+    <script defer src="index.js"></script>
   </head>
   <body>
     <section class="landing-page">
@@ -29,7 +29,7 @@
         </div>
         <ul class="nav__link--list">
           <li class="nav__link">
-            <a href="" class="nav__link--anchor">
+            <a href="/index.html" class="nav__link--anchor">
               <figure class="riot__logo--wrapper">
                 <img
                   class="riot__logo--img link-white"
@@ -48,19 +48,19 @@
           </li>
           <li class="nav__link valorant">
             <span class="tooltiptext">Next to be featured!</span>
-            <a class="nav__link--anchor  not-allowed">
+            <a href="/summoner.html" class="nav__link--anchor not-allowed">
               <figure class="riot__logo--wrapper">
                 <img
-                class="riot__logo--img link-red"
-                src="assets/valorant_logo.svg"
-                alt=""
+                  class="riot__logo--img link-red"
+                  src="assets/valorant_logo.svg"
+                  alt=""
                 />
               </figure>
               <figure class="riot__link--wrapper">
                 <img
-                class="riot__link--img link-red"
-                src="assets/valorant_logo_horizontal.svg"
-                alt=""
+                  class="riot__link--img link-red"
+                  src="assets/valorant_logo_horizontal.svg"
+                  alt=""
                 />
               </figure>
             </a>
@@ -70,18 +70,17 @@
       <header>
         <div class="container">
           <div class="row">
-            <div class="header__champions--display">
-
-            </div>
+            <div class="header__champions--display"></div>
             <h1 class="header__title">Search for your Account</h1>
             <form id="game-name__form" class="header__game-name" action="">
               <div class="search__region--wrapper">
                 <p class="search__para"><small>Region</small></p>
-                <input 
+                <input
                   class="search__input"
                   name="region"
                   type="text"
-                  placeholder="NA" />
+                  placeholder="NA"
+                />
               </div>
               <div class="search__name--wrapper">
                 <p class="search__para"><small>Search</small></p>
@@ -99,6 +98,21 @@
           </div>
         </div>
       </header>
+    </section>
+    <section id="champions--preview">
+      <main id="swup" class="transition-fade">
+        <div class="container">
+          <div class="row">
+            <h2 class="champions__subtitle">
+              View your top played champions here
+            </h2>
+            <p class="champions__para">
+              Use the search bar above and see the top played champions for any
+              existing Riot Games account.
+            </p>
+          </div>
+        </div>
+      </main>
     </section>
     <footer>
       <div class="container">
@@ -135,16 +149,22 @@
               <i class="fa-solid fa-file-pdf"></i>
             </a>
           </div>
-          <p class="footer__copyright">
-            Copyright &copy; 2025 EAV. All Rights Reserved.<br />
-            This project was created under Riot Games' policy, using assets
-            owned by Riot Games. Riot Games does not endorse, sponsor or reflect
-            the views or opinions of Riot Games or anyone officially in
-            producing or managing League of Legends.<br />
-            League of Legends and Riot Games are trademarks or registered
-            trademarks of Riot Games, Inc. League of Legends &copy Riot Games,
-            Inc.
-          </p>
+          <div class="footer__copyright">
+            <p class="footer__para">
+              Copyright &copy; 2025 EAV. All Rights Reserved.
+            </p>
+            <p class="footer__para">
+              This project was created under Riot Games' policy, using assets
+              owned by Riot Games. Riot Games does not endorse, sponsor or
+              reflect the views or opinions of Riot Games or anyone officially
+              in producing or managing League of Legends.
+            </p>
+            <p class="footer__para">
+              League of Legends and Riot Games are trademarks or registered
+              trademarks of Riot Games, Inc. League of Legends &copy Riot Games,
+              Inc.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

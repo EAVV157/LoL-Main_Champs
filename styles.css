@@ -29,7 +29,7 @@ h2 {
 }
 
 body {
-  background-color: #010A13;
+  background-color: #010a13;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -84,8 +84,8 @@ nav {
   height: 140px;
   margin: 0 auto;
   padding: 0 32px;
-  background-color: #1E282D;
-  border-bottom: 8px solid #C89B3C;
+  background-color: #1e282d;
+  border-bottom: 8px solid #c89b3c;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -98,14 +98,16 @@ nav {
 
 .main__logo--wrapper {
   width: 100px;
-  border-radius: 25%;
-  overflow: hidden;
 }
 
 .main__logo--img {
   width: 100%;
   vertical-align: middle;
-  /* Want to find how to fade the borders of the image */
+  background: linear-gradient(#010a13, #010a13) padding-box,
+              linear-gradient(#010a1380, #3c3c4180, #61616980, #3c3c4180, #010a1380) border-box,
+              linear-gradient(to right, #010a13, #3c3c41, #616169, #3c3c41, #010a13) border-box;
+  border-radius: 20%;
+  border: 4px solid transparent;
 }
 
 .main__title {
@@ -192,17 +194,20 @@ nav {
 
 .link-white,
 .link-red {
-  filter: invert(100%) sepia(1%) saturate(2%) hue-rotate(285deg) brightness(104%) contrast(101%);
+  filter: invert(100%) sepia(1%) saturate(2%) hue-rotate(285deg)
+    brightness(104%) contrast(101%);
   transition: filter 300ms ease, scale 300ms ease;
 }
 
 .nav__link:hover .link-white {
-  filter: invert(91%) sepia(30%) saturate(3043%) hue-rotate(326deg) brightness(83%) contrast(85%);
+  filter: invert(91%) sepia(30%) saturate(3043%) hue-rotate(326deg)
+    brightness(83%) contrast(85%);
   scale: 1.05;
 }
 
 .nav__link:hover .link-red {
-  filter: invert(43%) sepia(70%) saturate(3225%) hue-rotate(328deg) brightness(99%) contrast(105%);
+  filter: invert(43%) sepia(70%) saturate(3225%) hue-rotate(328deg)
+    brightness(99%) contrast(105%);
   scale: 1.05;
 }
 
@@ -274,7 +279,69 @@ nav {
   color: #5B5A56;
 } */
 
+/* ********** CHAMPIONS ********** */
+/* ----- INDEX ----- */
+#champions--preview .container {
+  padding-top: 0;
+  padding-bottom: 80px;
+}
+
+.champions__subtitle,
+.champions__para {
+  text-align: center;
+}
+
+/* -----SUMMONER ----- */
+
 /* ********** FOOTER ********** */
+
+footer .container {
+  padding-top: 120px;
+  padding-bottom: 20px;
+}
+
+footer .row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__subtitle {
+  padding-bottom: 16px;
+}
+
+.footer__social--list {
+  width: 100%;
+  max-width: 240px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer__social--link {
+  font-size: 24px;
+  text-align: center;
+}
+
+.footer__copyright {
+  width: 100%;
+  max-width: 700px;
+  padding-top: 80px;
+}
+
+.footer__para {
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 4px;
+}
+
+.footer__para:first-child {
+  padding-bottom: 16px;
+}
+
+.footer__para:last-child {
+  padding-bottom: 0;
+}
 
 /* SMALL DESKTOPS, LAPTOPS */
 @media (max-width: 1280px) {

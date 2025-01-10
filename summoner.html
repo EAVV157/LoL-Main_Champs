@@ -12,9 +12,156 @@
       src="https://kit.fontawesome.com/fe84bccaa2.js"
       crossorigin="anonymous"
     ></script>
-    <script src="summoner.js"></script>
+    <script defer src="summoner.js"></script>
   </head>
   <body>
-    
+    <section class="landing-page">
+      <nav>
+        <div class="main__container">
+          <figure class="main__logo--wrapper">
+            <img
+              src="assets/main_champ-logo.ico"
+              alt=""
+              class="main__logo--img"
+            />
+          </figure>
+          <h1 class="main__title">Main Champions List</h1>
+        </div>
+        <ul class="nav__link--list">
+          <li class="nav__link">
+            <a href="index.html" class="nav__link--anchor">
+              <figure class="riot__logo--wrapper">
+                <img
+                  class="riot__logo--img link-white"
+                  src="assets/lol_logo.svg"
+                  alt=""
+                />
+              </figure>
+              <figure class="riot__link--wrapper">
+                <img
+                  class="riot__link--img link-white"
+                  src="assets/lol_logo_horizontal.svg"
+                  alt=""
+                />
+              </figure>
+            </a>
+          </li>
+          <li class="nav__link valorant">
+            <span class="tooltiptext">Next to be featured!</span>
+            <a href="summoner.html" class="nav__link--anchor not-allowed">
+              <figure class="riot__logo--wrapper">
+                <img
+                  class="riot__logo--img link-red"
+                  src="assets/valorant_logo.svg"
+                  alt=""
+                />
+              </figure>
+              <figure class="riot__link--wrapper">
+                <img
+                  class="riot__link--img link-red"
+                  src="assets/valorant_logo_horizontal.svg"
+                  alt=""
+                />
+              </figure>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="header__champions--display"></div>
+            <h1 class="header__title">Search for your Account</h1>
+            <form id="game-name__form" class="header__game-name" action="">
+              <div class="search__region--wrapper">
+                <p class="search__para"><small>Region</small></p>
+                <input
+                  class="search__input"
+                  name="region"
+                  type="text"
+                  placeholder="NA"
+                />
+              </div>
+              <div class="search__name--wrapper">
+                <p class="search__para"><small>Search</small></p>
+                <input
+                  class="search__input"
+                  name="game-name"
+                  type="text"
+                  placeholder="Summoner Name + #TAG"
+                />
+              </div>
+              <button id="game-name__submit" class="search__submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </header>
+    </section>
+    <section id="champions">
+      <main id="swup" class="transition-fade">
+        
+      </main>
+      <div class="container">
+        <div class="row">
+          
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <h2 class="footer__subtitle">
+            <span class="gold">LoL</span> Main Champions
+          </h2>
+          <div class="footer__social--list">
+            <a
+              href="https://github.com/EAVV157"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/edgar-vargas-89b114190/"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a
+              href="./assets/Edgar-Vargas.pdf"
+              target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              <i class="fa-solid fa-file-pdf"></i>
+            </a>
+          </div>
+          <div class="footer__copyright">
+            <p class="footer__para">
+              Copyright &copy; 2025 EAV. All Rights Reserved.
+            </p>
+            <p class="footer__para">
+              This project was created under Riot Games' policy, using assets
+              owned by Riot Games. Riot Games does not endorse, sponsor or
+              reflect the views or opinions of Riot Games or anyone officially
+              in producing or managing League of Legends.
+            </p>
+            <p class="footer__para">
+              League of Legends and Riot Games are trademarks or registered
+              trademarks of Riot Games, Inc. League of Legends &copy Riot Games,
+              Inc.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
