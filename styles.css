@@ -38,6 +38,8 @@ body {
 p,
 a,
 input,
+select,
+option,
 button {
   color: #ffffff;
   font-size: 20px;
@@ -50,6 +52,24 @@ a {
 
 li {
   list-style-type: none;
+}
+
+select {
+  border: 0px solid;
+  color: #dfdfdf;
+  width: 100%;
+  margin: 2px 0;
+  background-color: transparent;
+  appearance: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+option {
+  color: #dfdfdf;
+  background-color: #3c3c41;
 }
 
 button,
@@ -104,8 +124,10 @@ nav {
   width: 100%;
   vertical-align: middle;
   background: linear-gradient(#010a13, #010a13) padding-box,
-              linear-gradient(#010a1380, #3c3c4180, #61616980, #3c3c4180, #010a1380) border-box,
-              linear-gradient(to right, #010a13, #3c3c41, #616169, #3c3c41, #010a13) border-box;
+    linear-gradient(#010a1380, #3c3c4180, #61616980, #3c3c4180, #010a1380)
+      border-box,
+    linear-gradient(to right, #010a13, #3c3c41, #616169, #3c3c41, #010a13)
+      border-box;
   border-radius: 20%;
   border: 4px solid transparent;
 }
@@ -149,7 +171,7 @@ nav {
 }
 
 .valorant .riot__logo--wrapper {
-  width: 60px;
+  width: 52px;
 }
 
 .riot__logo--img {
@@ -218,6 +240,7 @@ nav {
   margin-bottom: 32px;
 }
 
+/* ----- Container ----- */
 .header__game-name {
   width: 100%;
   height: 80px;
@@ -225,27 +248,49 @@ nav {
   border-radius: 200px;
   display: flex;
   justify-content: flex-end;
-  flex-wrap: wrap;
   align-items: center;
 }
 
-.search__region--wrapper {
-  width: calc(40% - 61px);
+.search__para {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+/* ----- Region ----- */
+.search__region--container {
+  width: calc(45% - 61px);
   padding-left: 32px;
   padding-right: 24px;
 }
 
+.search__select--container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search__arrow--wrapper {
+  margin-left: 4px;
+}
+
+.search__arrow--img {
+  font-size: 20px;
+  color: #dfdfdf;
+}
+
+/* ----- Summoner Name ----- */
 .header__game-name::before {
   content: "";
   position: relative;
-  left: calc(40% - 73px);
+  left: calc(45% - 73px);
   width: 1px;
   height: 40px;
   background: linear-gradient(#3c3c41, #999999, #ffffff, #999999, #3c3c41);
 }
 
-.search__name--wrapper {
-  width: 60%;
+.search__name--container {
+  width: 55%;
 }
 
 .search__submit {
@@ -257,11 +302,7 @@ nav {
   border: none;
 }
 
-.search__para {
-  font-size: 24px;
-  margin-bottom: 6px;
-}
-
+/* ----- Search Button ----- */
 .search__input {
   color: #dfdfdf;
   width: 100%;
@@ -271,19 +312,10 @@ nav {
   outline: none;
 }
 
-/* ::placeholder {
-  color: #5B5A56;
-}
-
-::-ms-input-placeholder {
-  color: #5B5A56;
-} */
-
 /* ********** CHAMPIONS ********** */
-/* ----- INDEX ----- */
 #champions--preview .container {
   padding-top: 0;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 
 .champions__subtitle,
@@ -291,7 +323,57 @@ nav {
   text-align: center;
 }
 
-/* -----SUMMONER ----- */
+.champions__display {
+  position: relative;
+  margin-top: 60px;
+  width: 100%;
+  height: 680px;
+}
+
+.champion--wrapper:last-child {
+  width: 400px;
+}
+
+.champion--wrapper {
+  position: absolute;
+  width: 360px;
+  border-radius: 24px;
+  box-shadow: 0 0 24px #c89b3c;
+  transition: scale 300ms ease;
+}
+
+.champion--wrapper:hover {
+  scale: 1.02;
+}
+
+.champ--one {
+  top: calc(50% - 300px);
+  left: calc(50% - 200px);
+}
+
+.champ--two {
+  top: calc(60% - 270px);
+  left: calc(22% - 180px);
+  transform: rotate(345deg);
+}
+
+.champ--three {
+  top: calc(60% - 270px);
+  right: calc(22% - 180px);
+  transform: rotate(15deg);
+}
+
+.champion--img {
+  width: 100%;
+  vertical-align: middle;
+  background: linear-gradient(#010a13, #010a13) padding-box,
+    linear-gradient(#010a1380, #3c3c4180, #61616980, #3c3c4180, #010a1380)
+      border-box,
+    linear-gradient(to right, #010a13, #3c3c41, #616169, #3c3c41, #010a13)
+      border-box;
+  border-radius: 24px;
+  border: 4px solid transparent;
+}
 
 /* ********** FOOTER ********** */
 
@@ -321,6 +403,11 @@ footer .row {
 .footer__social--link {
   font-size: 24px;
   text-align: center;
+  transition: color 300ms ease;
+}
+
+.footer__social--link:hover {
+  color: #f4ce52;
 }
 
 .footer__copyright {
@@ -345,18 +432,643 @@ footer .row {
 
 /* SMALL DESKTOPS, LAPTOPS */
 @media (max-width: 1280px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  p,
+  a,
+  input,
+  select,
+  option,
+  button {
+    font-size: 16px;
+  }
+
+  .row {
+    max-width: 840px;
+  }
+
+  .main__logo--wrapper {
+    width: 88px;
+  }
+
+  .riot__logo--wrapper {
+    width: 36px;
+  }
+
+  .riot__link--wrapper {
+    width: 92px;
+  }
+
+  .valorant .riot__logo--wrapper {
+    width: 48px;
+  }
+
+  .valorant .riot__link--wrapper {
+    width: 120px;
+  }
+
+  .header__game-name {
+    height: 72px;
+  }
+
+  .search__para {
+    font-size: 20px;
+  }
+
+  .search__arrow--img {
+    font-size: 16px;
+  }
+
+  .header__game-name::before {
+    left: calc(45% - 69px);
+  }
+
+  .search__submit {
+    font-size: 24px;
+  }
+
+  .champion--wrapper:last-child {
+    width: 360px;
+  }
+
+  .champions__display {
+    height: 600px;
+  }
+
+  .champion--wrapper {
+    width: 320px;
+  }
+
+  .champ--one {
+    top: calc(50% - 270px);
+    left: calc(50% - 180px);
+  }
+
+  .champ--two {
+    top: calc(60% - 240px);
+    left: calc(20% - 160px);
+  }
+
+  .champ--three {
+    top: calc(60% - 240px);
+    right: calc(20% - 160px);
+  }
+
+  .footer__social--list {
+    max-width: 220px;
+  }
+
+  .footer__social--link {
+    font-size: 20px;
+  }
 }
 /* SMALL LAPTOPS, LANDSCAPE TABLETS */
 @media (max-width: 1024px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  p,
+  a,
+  input,
+  select,
+  option,
+  button {
+    font-size: 12px;
+  }
+
+  .row {
+    max-width: 720px;
+  }
+
+  nav {
+    border-bottom: 6px solid #c89b3c;
+    padding: 0 16px;
+    height: 80px;
+  }
+
+  .main__logo--wrapper {
+    width: 48px;
+  }
+
+  .main__logo--img {
+    border: 2px solid transparent;
+  }
+
+  .nav__link {
+    margin-right: 16px;
+  }
+
+  .riot__logo--wrapper {
+    width: 24px;
+    margin-right: 8px;
+  }
+
+  .riot__link--wrapper {
+    width: 72px;
+  }
+
+  .valorant .riot__logo--wrapper {
+    width: 36px;
+  }
+
+  .valorant .riot__link--wrapper {
+    width: 92px;
+  }
+
+  .search__para {
+    font-size: 16px;
+  }
+
+  .search__region--container {
+    padding-left: 24px;
+    padding-right: 16px;
+  }
+
+  .search__arrow--img {
+    font-size: 12px;
+  }
+
+  .search__submit {
+    font-size: 20px;
+  }
+
+  .champion--wrapper:last-child {
+    width: 280px;
+  }
+
+  .champions__display {
+    height: 480px;
+  }
+
+  .champion--wrapper {
+    width: 240px;
+  }
+
+  .champ--one {
+    top: calc(50% - 210px);
+    left: calc(50% - 140px);
+  }
+
+  .champ--two {
+    top: calc(61% - 180px);
+    left: calc(23% - 120px);
+
+  }
+
+  .champ--three {
+    top: calc(61% - 180px);
+    right: calc(23% - 120px);
+
+  }
+
+  footer .container {
+    padding-top: 100px;
+  }
+
+  .footer__subtitle {
+    padding-bottom: 16px;
+  }
+
+  .footer__social--list {
+    max-width: 180px;
+  }
+
+  .footer__copyright {
+    padding-top: 60px;
+  }
 }
 /* TABLETS, LANDSCAPE PHONES */
 @media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p,
+  a,
+  input,
+  select,
+  option,
+  button {
+    font-size: 10px;
+  }
+
+  .container {
+    padding: 32px 0;
+  }
+
+  .row {
+    max-width: 500px;
+  }
+
+  nav {
+    border-bottom: 4px solid #c89b3c;
+    height: 60px;
+  }
+
+  .main__logo--wrapper {
+    width: 40px;
+  }
+
+  .main__title {
+    padding-left: 12px;
+  }
+
+  .riot__logo--wrapper {
+    width: 20px;
+  }
+
+  .riot__link--wrapper {
+    width: 64px;
+  }
+
+  .valorant .riot__logo--wrapper {
+    width: 28px;
+  }
+
+  .valorant .riot__link--wrapper {
+    width: 80px;
+  }
+
+  .header__game-name {
+    height: 60px;
+  }
+
+  .search__para {
+    font-size: 12px;
+  }
+
+  .search__region--container {
+    width: calc(45% - 31px);
+    padding-left: 20px;
+    padding-right: 12px;
+  }
+
+  .search__arrow--img {
+    font-size: 8px;
+  }
+
+  .header__game-name::before {
+    left: calc(45% - 37px);
+    height: 30px;
+  }
+
+  .search__submit {
+    width: 30px;
+    height: 60px;
+    font-size: 16px;
+  }
+
+  .champion--wrapper:last-child {
+    width: 200px;
+  }
+
+  .champions__display {
+    height: 320px;
+  }
+
+  .champion--wrapper {
+    width: 160px;
+  }
+
+  .champ--one {
+    top: calc(50% - 150px);
+    left: calc(50% - 100px);
+  }
+
+  .champ--two {
+    top: calc(60% - 120px);
+    left: calc(24% - 80px);
+
+  }
+
+  .champ--three {
+    top: calc(60% - 120px);
+    right: calc(24% - 80px);
+
+  }
+
+  footer .container {
+    padding-top: 60px;
+  }
+
+  .footer__social--list {
+    max-width: 124px;
+  }
+
+  .footer__social--link {
+    font-size: 16px;
+  }
+
+  .footer__para {
+    font-size: 8px;
+  }
+
+  .footer__copyright {
+    padding-top: 40px;
+  }
 }
 /* PHONES, LANDSCAPE SMALL PHONES */
 @media (max-width: 640px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  p,
+  a,
+  input,
+  select,
+  option,
+  button {
+    font-size: 8px;
+  }
+
+  .container {
+    padding: 24px 0;
+  }
+
+  .row {
+    max-width: 420px;
+  }
+
+  nav {
+    border-bottom: 2px solid #c89b3c;
+    height: 52px;
+  }
+
+  .main__logo--wrapper {
+    width: 32px;
+  }
+
+  .main__title {
+    padding-left: 8px;
+  }
+
+  .riot__logo--wrapper {
+    width: 16px;
+  }
+
+  .riot__link--wrapper {
+    width: 48px;
+  }
+
+  .valorant .riot__logo--wrapper {
+    width: 20px;
+  }
+
+  .valorant .riot__link--wrapper {
+    width: 64px;
+  }
+
+  #champions--preview .container {
+    padding-bottom: 20px;
+  }
+
+  .header__title {
+    margin-bottom: 16px;
+  }
+
+  .header__game-name {
+    height: 40px;
+  }
+
+  .search__para {
+    font-size: 10px;
+    margin-bottom: 0;
+  }
+
+  .search__region--container {
+    width: calc(45% - 31px);
+    padding-left: 16px;
+  }
+
+  .search__arrow--img {
+    font-size: 8px;
+  }
+
+  .header__game-name::before {
+    left: calc(45% - 37px);
+    height: 30px;
+  }
+
+  .search__submit {
+    width: 32px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .champion--wrapper:last-child {
+    width: 160px;
+  }
+
+  .champions__display {
+    height: 280px;
+    margin-top: 32px;
+  }
+
+  .champion--wrapper {
+    width: 120px;
+  }
+
+  .champ--one {
+    top: calc(50% - 120px);
+    left: calc(50% - 80px);
+  }
+
+  .champ--two {
+    top: calc(60% - 80px);
+    left: calc(25% - 60px);
+  }
+
+  .champ--three {
+    top: calc(60% - 80px);
+    right: calc(25% - 60px);
+  }
+
+  footer .container {
+    padding-top: 24px;
+  }
+
+  .footer__subtitle {
+    padding-bottom: 8px;
+  }
+
+  .footer__social--list {
+    max-width: 100px;
+  }
+
+  .footer__social--link {
+    font-size: 12px;
+  }
+
+  .footer__para {
+    font-size: 6px;
+  }
+
+  .footer__copyright {
+    padding-top: 32px;
+  }
 }
 /* SMALL PHONES, LANDSCAPE TINY PHONES */
 @media (max-width: 480px) {
+  h1 {
+    font-size: 16px;
+  }
+
+  h2 {
+    font-size: 12px;
+  }
+
+  p,
+  a,
+  input,
+  select,
+  option,
+  button {
+    font-size: 6px;
+  }
+
+  .container {
+    padding: 16px 0;
+  }
+
+  .row {
+    max-width: 300px;
+  }
+
+  nav {
+    height: 36px;
+  }
+
+  .main__logo--wrapper {
+    width: 24px;
+  }
+
+  .main__logo--img {
+    border: 1px solid transparent;
+  }
+
+  .main__title {
+    padding-left: 4px;
+  }
+
+  .riot__logo--wrapper {
+    width: 12px;
+  }
+
+  .riot__link--wrapper {
+    width: 32px;
+  }
+
+  .valorant .riot__logo--wrapper {
+    width: 14px;
+  }
+
+  .valorant .riot__link--wrapper {
+    width: 48px;
+  }
+
+  .header__game-name {
+    height: 32px;
+  }
+
+  .search__para {
+    font-size: 8px;
+  }
+
+  .search__region--container {
+    width: calc(50% - 17px);
+    padding-left: 8px;
+  }
+
+  .search__arrow--img {
+    font-size: 6px;
+  }
+
+  .header__game-name::before {
+    left: calc(50% - 23px);
+    height: 30px;
+  }
+
+  .search__name--container {
+    width: 50%;
+  }
+
+  .search__submit {
+    width: 20px;
+    height: 32px;
+    font-size: 8px;
+  }
+  
+  .champions__display {
+    height: 180px;
+    margin-top: 16px;
+  }
+
+  .champion--wrapper:last-child {
+    width: 100px;
+  }
+
+  .champion--wrapper {
+    width: 80px;
+  }
+
+  .champ--one {
+    top: calc(50% - 75px);
+    left: calc(50% - 50px);
+  }
+
+  .champ--two {
+    top: calc(60% - 50px);
+    left: calc(30% - 40px);
+  }
+
+  .champ--three {
+    top: calc(60% - 50px);
+    right: calc(30% - 40px);
+  }
+
+  footer .container {
+    padding-top: 16px;
+  }
+
+  .footer__social--list {
+    max-width: 80px;
+  }
+
+  .footer__social--link {
+    font-size: 8px;
+  }
+
+  .footer__para {
+    font-size: 4px;
+  }
+
+  .footer__para:first-child {
+    padding-bottom: 8px;
+  }
+
+  .footer__copyright {
+    padding-top: 12px;
+  }
 }
 /* TINY PHONES */
 @media (max-width: 320px) {

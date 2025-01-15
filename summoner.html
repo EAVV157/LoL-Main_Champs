@@ -70,25 +70,41 @@
       <header>
         <div class="container">
           <div class="row">
-            <div class="header__champions--display"></div>
             <h1 class="header__title">Search for your Account</h1>
             <form id="game-name__form" class="header__game-name" action="">
-              <div class="search__region--wrapper">
+              <div class="search__region--container">
                 <p class="search__para"><small>Region</small></p>
-                <input
-                  class="search__input"
-                  name="region"
-                  type="text"
-                  placeholder="NA"
-                />
+                <div class="search__select--container">
+                  <select id="NA">
+                    <option value="na">English (NA)</option>
+                    <option value="me">Middle East (ME)</option>
+                    <option value="euw">Europe West (EUW)</option>
+                    <option value="eune">Europe Nordic & East (EUNE)</option>
+                    <option value="oce">Oceania (OCE)</option>
+                    <option value="kr">Korea (KR)</option>
+                    <option value="jp">Japan (JP)</option>
+                    <option value="br">Brazil (BR)</option>
+                    <option value="las">Latin America South (LAS)</option>
+                    <option value="lan">Latin America North (LAN)</option>
+                    <option value="ru">Russia (RU)</option>
+                    <option value="tr">Turkey (TR)</option>
+                    <option value="sea">Southeast Asia (SEA)</option>
+                    <option value="tw">Taiwan (TW)</option>
+                    <option value="vn">Vietnam (VN)</option>
+                  </select>
+                  <div class="search__arrow--wrapper">
+                    <i class="fa-solid fa-chevron-up search__arrow--img"></i>
+                  </div>
+                </div>
               </div>
-              <div class="search__name--wrapper">
+              <div class="search__name--container">
                 <p class="search__para"><small>Search</small></p>
                 <input
                   class="search__input"
                   name="game-name"
                   type="text"
                   placeholder="Summoner Name + #TAG"
+                  required
                 />
               </div>
               <button id="game-name__submit" class="search__submit">
