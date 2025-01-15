@@ -976,11 +976,15 @@ footer .row {
   }
 }
 /* SMALL PHONES, LANDSCAPE TINY PHONES */
-@media (max-width: 480px) {
+@media screen and (max-device-width: 480px){
   body{
     -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
+}
 
+@media (max-width: 480px) {
   h1 {
     font-size: 16px;
   }
