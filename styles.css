@@ -752,7 +752,7 @@ footer .row {
   }
 
   .search__arrow--img {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .header__game-name::before {
@@ -810,7 +810,7 @@ footer .row {
   }
 
   .footer__para {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .footer__copyright {
@@ -833,7 +833,7 @@ footer .row {
   select,
   option,
   button {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .container {
@@ -880,7 +880,7 @@ footer .row {
 
   .valorant .tooltiptext {
     width: 76px;
-    font-size: 8px;
+    font-size: 10px;
     top: 32px;
     right: 20px;
   }
@@ -908,7 +908,7 @@ footer .row {
   }
 
   .search__arrow--img {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .header__game-name::before {
@@ -995,7 +995,7 @@ footer .row {
   select,
   option,
   button {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   select {
@@ -1053,7 +1053,7 @@ footer .row {
   }
 
   .search__para {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .search__region--container {
@@ -1073,7 +1073,7 @@ footer .row {
   .search__submit {
     width: 20px;
     height: 32px;
-    font-size: 8px;
+    font-size: 10px;
   }
   
   .champions__display {
@@ -1117,7 +1117,7 @@ footer .row {
   }
 
   .footer__social--link {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .footer__para:first-child {
