@@ -115,13 +115,25 @@
         </div>
       </header>
     </section>
-    <section id="champions">
-      <main id="swup" class="transition-fade">
-        
-      </main>
+    <section id="summoner-champions">
+      <canvas class="summoner__bg--img"></canvas>
       <div class="container">
         <div class="row">
-          
+          <div class="summoner-champions__display">
+            <div class="summoner-champion--wrapper null-champ">
+              <img
+                src="assets/null_champ-bg.jpg"
+                class="summoner-champion--img null-champ"
+              />
+            </div>
+            <div class="summoner-champion__info--container">
+              <h3 class="summoner-champion__title">Summoner not found</h3>
+              <p class="summoner-champion__description">
+                Verify that the summoner name and/or the #TAG is correctly
+                written.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -166,9 +178,9 @@
             </p>
             <p class="footer__para">
               This project was created under Riot Games' policy, using assets
-              owned by Riot Games. Riot Games does not endorse, sponsor or
-              reflect the views or opinions of Riot Games or anyone officially
-              in producing or managing League of Legends.
+              owned by Riot Games. This project or EAV does not endorse, sponsor
+              or reflect the views or opinions of Riot Games or anyone
+              officially in producing or managing League of Legends.
             </p>
             <p class="footer__para">
               League of Legends and Riot Games are trademarks or registered

@@ -28,6 +28,14 @@ h2 {
   font-size: 40px;
 }
 
+h3 {
+  font-family: "Beufort";
+  font-weight: 500;
+  background: linear-gradient(#ffffff, #8f8f8f);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 body {
   background-color: #010a13;
   display: flex;
@@ -196,7 +204,7 @@ nav {
   visibility: hidden;
   width: 160px;
   background-color: black;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;
@@ -320,28 +328,29 @@ nav {
 }
 
 /* ********** CHAMPIONS ********** */
-#champions--preview .container {
+/* ----- INDEX SECTION ----- */
+#index-champions .container {
   padding-top: 0;
   padding-bottom: 40px;
 }
 
-.champions__subtitle,
-.champions__para {
+.index-champions__subtitle,
+.index-champions__para {
   text-align: center;
 }
 
-.champions__display {
+.index-champions__display {
   position: relative;
   margin-top: 60px;
   width: 100%;
   height: 680px;
 }
 
-.champion--wrapper:last-child {
+.index-champion--wrapper:last-child {
   width: 400px;
 }
 
-.champion--wrapper {
+.index-champion--wrapper {
   position: absolute;
   width: 360px;
   border-radius: 24px;
@@ -349,28 +358,28 @@ nav {
   transition: scale 300ms ease;
 }
 
-.champion--wrapper:hover {
+.index-champion--wrapper:hover {
   scale: 1.02;
 }
 
-.champ--one {
+.index-champ--one {
   top: calc(50% - 300px);
   left: calc(50% - 200px);
 }
 
-.champ--two {
+.index-champ--two {
   top: calc(60% - 270px);
   left: calc(22% - 180px);
   transform: rotate(345deg);
 }
 
-.champ--three {
+.index-champ--three {
   top: calc(60% - 270px);
   right: calc(22% - 180px);
   transform: rotate(15deg);
 }
 
-.champion--img {
+.index-champion--img {
   width: 100%;
   vertical-align: middle;
   background: linear-gradient(#010a13, #010a13) padding-box,
@@ -382,8 +391,88 @@ nav {
   border: 4px solid transparent;
 }
 
-/* ********** FOOTER ********** */
+/* ----- SUMMONERS SECTION ----- */
+#summoner-champions {
+  position: relative;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to right, #f4ce52, #785a28);
+  border-left: 0;
+  border-right: 0;
+  overflow: hidden;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.summoner__bg--img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url(https://wiki.leagueoflegends.com/en-us/images/Celestial_Realm.png?f80cb);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+
+  -webkit-filter: contrast(120%);
+  -moz-filter: contrast(120%);
+  -o-filter: contrast(120%);
+  -ms-filter: contrast(120%);
+  filter: contrast(120%);
+}
+
+#summoner-champions .container {
+  padding: 40px 0;
+}
+#summoner-champions .row {
+  max-width: 1200px;
+}
+
+.summoner-champion--wrapper {
+  width: 360px;
+  border-radius: 24px;
+  box-shadow: 0 0 24px #ffffff;
+}
+
+.summoner-champions__display {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.summoner-champion--img {
+  width: 100%;
+  vertical-align: middle;
+  background: linear-gradient(#010a13, #010a13) padding-box,
+    linear-gradient(#010a1380, #3c3c4180, #61616980, #3c3c4180, #010a1380)
+      border-box,
+    linear-gradient(to right, #010a13, #3c3c41, #616169, #3c3c41, #010a13)
+      border-box;
+  border-radius: 24px;
+  border: 4px solid transparent;
+}
+
+.summoner-champion__info--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 64px;
+}
+
+.summoner-champion__title {
+  font-size: 56px;
+  margin-bottom: 12px;
+}
+
+.summoner-champion__description {
+  color: #dfdfdf;
+  font-size: 32px;
+  text-align: center;
+}
+
+/* ********** FOOTER ********** */
 footer .container {
   padding-top: 120px;
   padding-bottom: 20px;
@@ -505,31 +594,43 @@ footer .row {
     font-size: 24px;
   }
 
-  .champion--wrapper:last-child {
+  .index-champion--wrapper:last-child {
     width: 360px;
   }
 
-  .champions__display {
+  .index-champions__display {
     height: 600px;
   }
 
-  .champion--wrapper {
+  .index-champion--wrapper {
     width: 320px;
   }
 
-  .champ--one {
+  .index-champ--one {
     top: calc(50% - 270px);
     left: calc(50% - 180px);
   }
 
-  .champ--two {
+  .index-champ--two {
     top: calc(60% - 240px);
     left: calc(20% - 160px);
   }
 
-  .champ--three {
+  .index-champ--three {
     top: calc(60% - 240px);
     right: calc(20% - 160px);
+  }
+
+  #summoner-champions .row {
+    max-width: 960px;
+  }
+  
+  .summoner-champion__title {
+    font-size: 48px;
+  }
+  
+  .summoner-champion__description {
+    font-size: 24px;
   }
 
   .footer__social--list {
@@ -622,35 +723,62 @@ footer .row {
     font-size: 20px;
   }
 
-  .champion--wrapper:last-child {
+  .index-champion--wrapper:last-child {
     width: 280px;
   }
 
-  .champions__display {
+  .index-champions__display {
     height: 480px;
   }
 
-  .champion--wrapper {
+  .index-champion--wrapper {
     width: 240px;
   }
 
-  .champ--one {
+  .index-champ--one {
     top: calc(50% - 210px);
     left: calc(50% - 140px);
   }
 
-  .champ--two {
+  .index-champ--two {
     top: calc(61% - 180px);
     left: calc(23% - 120px);
   }
 
-  .champ--three {
+  .index-champ--three {
     top: calc(61% - 180px);
     right: calc(23% - 120px);
   }
 
-  .champion--img {
+  .index-champion--img {
     border-radius: 20px;
+  }
+
+  #summoner-champions .container {
+    padding: 24px 0;
+  }
+
+  #summoner-champions .row {
+    max-width: 680px;
+  }
+  
+  .summoner-champion--wrapper {
+    width: 320px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ffffff;
+  }
+  
+  .summoner-champion--img {
+    border-radius: 20px;
+  }
+  
+  .summoner-champion__title {
+    font-size: 36px;
+    margin-bottom: 8px;
+  }
+  
+  .summoner-champion__description {
+    font-size: 20px;
   }
 
   footer .container {
@@ -766,35 +894,66 @@ footer .row {
     font-size: 16px;
   }
 
-  .champion--wrapper:last-child {
+  .index-champion--wrapper:last-child {
     width: 200px;
   }
 
-  .champions__display {
+  .index-champions__display {
     height: 320px;
   }
 
-  .champion--wrapper {
+  .index-champion--wrapper {
     width: 160px;
   }
 
-  .champ--one {
+  .index-champ--one {
     top: calc(50% - 150px);
     left: calc(50% - 100px);
   }
 
-  .champ--two {
+  .index-champ--two {
     top: calc(60% - 120px);
     left: calc(24% - 80px);
   }
 
-  .champ--three {
+  .index-champ--three {
     top: calc(60% - 120px);
     right: calc(24% - 80px);
   }
 
-  .champion--img {
+  .index-champion--img {
     border-radius: 16px;
+  }
+
+  #summoner-champions .container {
+    padding: 20px 0;
+  }
+
+  #summoner-champions .row {
+    max-width: 560px;
+  }
+  
+  .summoner-champion--wrapper {
+    width: 240px;
+    border-radius: 16px;
+    box-shadow: 0 0 16px #ffffff;
+  }
+  
+  .summoner-champion--img {
+    border-radius: 16px;
+  }
+  
+  .summoner-champion__info--container {
+    margin: 0 32px;
+  }
+  
+  .summoner-champion__title {
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .summoner-champion__description {
+    font-size: 16px;
   }
 
   footer .container {
@@ -885,7 +1044,7 @@ footer .row {
     right: 20px;
   }
 
-  #champions--preview .container {
+  #index--champions .container {
     padding-bottom: 20px;
   }
 
@@ -922,37 +1081,69 @@ footer .row {
     font-size: 12px;
   }
 
-  .champion--wrapper:last-child {
+  .index-champion--wrapper:last-child {
     width: 160px;
   }
 
-  .champions__display {
+  .index-champions__display {
     height: 280px;
     margin-top: 32px;
   }
 
-  .champion--wrapper {
+  .index-champion--wrapper {
     width: 120px;
   }
 
-  .champ--one {
+  .index-champ--one {
     top: calc(50% - 120px);
     left: calc(50% - 80px);
   }
 
-  .champ--two {
+  .index-champ--two {
     top: calc(60% - 80px);
     left: calc(25% - 60px);
   }
 
-  .champ--three {
+  .index-champ--three {
     top: calc(60% - 80px);
     right: calc(25% - 60px);
   }
 
-  .champion--img {
+  .index-champion--img {
     border-radius: 12px;
     border: 2px solid transparent;
+  }
+
+  #summoner-champions .container {
+    padding: 16px 0;
+  }
+
+  #summoner-champions .row {
+    max-width: 420px;
+  }
+  
+  .summoner-champion--wrapper {
+    width: 120px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #ffffff;
+  }
+  
+  .summoner-champion--img {
+    border-radius: 12px;
+    border: 2px solid transparent;
+  }
+  
+  .summoner-champion__info--container {
+    margin: 0 16px;
+  }
+  
+  .summoner-champion__title {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+  
+  .summoner-champion__description {
+    font-size: 12px;
   }
 
   footer .container {
@@ -976,8 +1167,8 @@ footer .row {
   }
 }
 /* SMALL PHONES, LANDSCAPE TINY PHONES */
-@media screen and (max-device-width: 480px){
-  body{
+@media screen and (max-device-width: 480px) {
+  body {
     -webkit-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
     text-size-adjust: 100%;
@@ -1079,37 +1270,45 @@ footer .row {
     height: 32px;
     font-size: 10px;
   }
-  
-  .champions__display {
+
+  .index-champions__display {
     height: 180px;
     margin-top: 16px;
   }
 
-  .champion--wrapper:last-child {
+  .index-champion--wrapper:last-child {
     width: 100px;
   }
 
-  .champion--wrapper {
+  .index-champion--wrapper {
     width: 80px;
   }
 
-  .champ--one {
+  .index-champ--one {
     top: calc(50% - 75px);
     left: calc(50% - 50px);
   }
 
-  .champ--two {
+  .index-champ--two {
     top: calc(60% - 50px);
     left: calc(30% - 40px);
   }
 
-  .champ--three {
+  .index-champ--three {
     top: calc(60% - 50px);
     right: calc(30% - 40px);
   }
 
-  .champion--img {
+  .index-champion--img {
     border-radius: 8px;
+  }
+
+  .summoner-champions__display {
+    justify-content: space-between;
+  }
+
+  .summoner-champion__info--container {
+    margin: 0 8px;
   }
 
   footer .container {
