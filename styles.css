@@ -256,6 +256,13 @@ nav {
   margin-bottom: 6px;
 }
 
+.search__region--container,
+.search__name--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* ----- Region ----- */
 .search__region--container {
   width: calc(45% - 61px);
@@ -692,6 +699,7 @@ footer .row {
   nav {
     border-bottom: 4px solid #c89b3c;
     height: 60px;
+    padding: 0 12px;
   }
 
   .main__logo--wrapper {
@@ -700,6 +708,10 @@ footer .row {
 
   .main__title {
     padding-left: 12px;
+  }
+
+  .nav__link {
+    margin-right: 8px;
   }
 
   .riot__logo--wrapper {
@@ -835,6 +847,7 @@ footer .row {
   nav {
     border-bottom: 2px solid #c89b3c;
     height: 52px;
+    padding: 0 8px;
   }
 
   .main__logo--wrapper {
@@ -843,6 +856,10 @@ footer .row {
 
   .main__title {
     padding-left: 8px;
+  }
+
+  .nav__link {
+    margin-right: 6px;
   }
 
   .riot__logo--wrapper {
@@ -896,7 +913,7 @@ footer .row {
 
   .header__game-name::before {
     left: calc(45% - 37px);
-    height: 30px;
+    height: 20px;
   }
 
   .search__submit {
@@ -954,10 +971,6 @@ footer .row {
     font-size: 12px;
   }
 
-  .footer__para {
-    font-size: 6px;
-  }
-
   .footer__copyright {
     padding-top: 32px;
   }
@@ -978,7 +991,11 @@ footer .row {
   select,
   option,
   button {
-    font-size: 6px;
+    font-size: 8px;
+  }
+
+  select {
+    margin: 0;
   }
 
   .container {
@@ -986,7 +1003,7 @@ footer .row {
   }
 
   .row {
-    max-width: 300px;
+    max-width: 360px;
   }
 
   nav {
@@ -1022,10 +1039,9 @@ footer .row {
   }
 
   .valorant .tooltiptext {
-    width: 60px;
-    font-size: 6px;
+    width: 72px;
     top: 24px;
-    right: 16px;
+    right: 6px;
   }
 
   .header__game-name {
@@ -1041,13 +1057,9 @@ footer .row {
     padding-left: 8px;
   }
 
-  .search__arrow--img {
-    font-size: 6px;
-  }
-
   .header__game-name::before {
     left: calc(50% - 23px);
-    height: 30px;
+    height: 16px;
   }
 
   .search__name--container {
@@ -1104,10 +1116,6 @@ footer .row {
     font-size: 8px;
   }
 
-  .footer__para {
-    font-size: 4px;
-  }
-
   .footer__para:first-child {
     padding-bottom: 8px;
   }
@@ -1115,7 +1123,4 @@ footer .row {
   .footer__copyright {
     padding-top: 12px;
   }
-}
-/* TINY PHONES */
-@media (max-width: 320px) {
 }
