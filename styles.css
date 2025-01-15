@@ -473,6 +473,11 @@ footer .row {
     width: 120px;
   }
 
+  .valorant .tooltiptext {
+    top: 90px;
+    right: 40px;
+  }
+
   .header__game-name {
     height: 72px;
   }
@@ -586,6 +591,13 @@ footer .row {
     width: 92px;
   }
 
+  .valorant .tooltiptext {
+    width: 124px;
+    font-size: 12px;
+    top: 48px;
+    right: 24px;
+  }
+
   .search__para {
     font-size: 16px;
   }
@@ -623,13 +635,15 @@ footer .row {
   .champ--two {
     top: calc(61% - 180px);
     left: calc(23% - 120px);
-
   }
 
   .champ--three {
     top: calc(61% - 180px);
     right: calc(23% - 120px);
+  }
 
+  .champion--img {
+    border-radius: 20px;
   }
 
   footer .container {
@@ -704,6 +718,13 @@ footer .row {
     width: 80px;
   }
 
+  .valorant .tooltiptext {
+    width: 100px;
+    font-size: 10px;
+    top: 36px;
+    right: 24px;
+  }
+
   .header__game-name {
     height: 60px;
   }
@@ -753,13 +774,15 @@ footer .row {
   .champ--two {
     top: calc(60% - 120px);
     left: calc(24% - 80px);
-
   }
 
   .champ--three {
     top: calc(60% - 120px);
     right: calc(24% - 80px);
+  }
 
+  .champion--img {
+    border-radius: 16px;
   }
 
   footer .container {
@@ -838,6 +861,13 @@ footer .row {
     width: 64px;
   }
 
+  .valorant .tooltiptext {
+    width: 76px;
+    font-size: 8px;
+    top: 32px;
+    right: 20px;
+  }
+
   #champions--preview .container {
     padding-bottom: 20px;
   }
@@ -901,6 +931,11 @@ footer .row {
   .champ--three {
     top: calc(60% - 80px);
     right: calc(25% - 60px);
+  }
+
+  .champion--img {
+    border-radius: 12px;
+    border: 2px solid transparent;
   }
 
   footer .container {
@@ -986,6 +1021,13 @@ footer .row {
     width: 48px;
   }
 
+  .valorant .tooltiptext {
+    width: 60px;
+    font-size: 6px;
+    top: 24px;
+    right: 16px;
+  }
+
   .header__game-name {
     height: 32px;
   }
@@ -1044,6 +1086,10 @@ footer .row {
   .champ--three {
     top: calc(60% - 50px);
     right: calc(30% - 40px);
+  }
+
+  .champion--img {
+    border-radius: 8px;
   }
 
   footer .container {
