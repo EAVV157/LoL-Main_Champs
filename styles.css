@@ -85,8 +85,22 @@ button,
   cursor: pointer;
 }
 
+button {
+  transition: color 300ms ease;
+}
+
+button:hover {
+  color: #c89b3c;
+}
+
 .not-allowed {
   cursor: not-allowed;
+}
+
+.silver {
+  background: linear-gradient(#ffffff, #8f8f8f);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .container {
@@ -430,13 +444,103 @@ nav {
   max-width: 1200px;
 }
 
+.summoner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.summoner__loading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 250px 0;
+}
+
+.summoner__loading--subtitle {
+  display: none !important;
+  -webkit-animation: fadeinout 3s linear forwards;
+  animation: fadeinout 3s linear forwards;
+  opacity: 0;
+}
+
+.summoner__loading .summoner__loading--subtitle {
+  display: block !important;
+}
+
+@-webkit-keyframes fadeinout {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
+}
+
+.summoner__profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summoner__profile--display {
+  display: flex;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.summoner__profile--wrapper {
+  width: 100px;
+  border-radius: 24px;
+}
+
+.summoner__profile--img {
+  width: 100%;
+  vertical-align: middle;
+  background: linear-gradient(#010a13, #010a13) padding-box,
+    linear-gradient(#010a1380, #3c3c4180, #61616980, #3c3c4180, #010a1380)
+      border-box,
+    linear-gradient(to right, #010a13, #3c3c41, #616169, #3c3c41, #010a13)
+      border-box;
+  border-radius: 24px;
+  border: 4px solid transparent;
+}
+
+.summoner__profile--name {
+  margin-left: 40px;
+}
+
+.summoner__profile--filter {
+  display: flex;
+  align-items: center;
+}
+
+.summoner__profile--filter-sub {
+  font-size: 32px;
+  margin-right: 20px;
+}
+
+.summoner__filter {
+  margin-top: 4px;
+  margin-bottom: 0;
+  padding: 4px 8px;
+  border: 2px solid #010a1380;
+  background-color: #010a13;
+  appearance: auto;
+}
+
+.summoner__filter option {
+  background-color: #010a13;
+}
+
 .summoner-champion--wrapper {
   width: 360px;
   border-radius: 24px;
   box-shadow: 0 0 24px #ffffff;
 }
 
-.summoner-champions__display {
+.summoner-champion__display {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -454,6 +558,10 @@ nav {
   border: 4px solid transparent;
 }
 
+.champion--img {
+  width: auto;
+}
+
 .summoner-champion__info--container {
   display: flex;
   flex-direction: column;
@@ -461,15 +569,29 @@ nav {
   margin: 0 64px;
 }
 
+.summoner-champion__name{
+  font-size: 100px;
+}
+
 .summoner-champion__title {
-  font-size: 56px;
+  font-size: 40px;
   margin-bottom: 12px;
+}
+
+.champion__title {
+  font-size: 48px;
+  margin-bottom: 60px;
 }
 
 .summoner-champion__description {
   color: #dfdfdf;
   font-size: 32px;
   text-align: center;
+}
+
+.champion--description {
+  text-align: justify;
+  font-size: 32px;
 }
 
 /* ********** FOOTER ********** */
@@ -624,11 +746,11 @@ footer .row {
   #summoner-champions .row {
     max-width: 960px;
   }
-  
+
   .summoner-champion__title {
     font-size: 48px;
   }
-  
+
   .summoner-champion__description {
     font-size: 24px;
   }
@@ -761,22 +883,22 @@ footer .row {
   #summoner-champions .row {
     max-width: 680px;
   }
-  
+
   .summoner-champion--wrapper {
     width: 320px;
     border-radius: 20px;
     box-shadow: 0 0 20px #ffffff;
   }
-  
+
   .summoner-champion--img {
     border-radius: 20px;
   }
-  
+
   .summoner-champion__title {
     font-size: 36px;
     margin-bottom: 8px;
   }
-  
+
   .summoner-champion__description {
     font-size: 20px;
   }
@@ -932,26 +1054,26 @@ footer .row {
   #summoner-champions .row {
     max-width: 560px;
   }
-  
+
   .summoner-champion--wrapper {
     width: 240px;
     border-radius: 16px;
     box-shadow: 0 0 16px #ffffff;
   }
-  
+
   .summoner-champion--img {
     border-radius: 16px;
   }
-  
+
   .summoner-champion__info--container {
     margin: 0 32px;
   }
-  
+
   .summoner-champion__title {
     font-size: 24px;
     margin-bottom: 8px;
   }
-  
+
   .summoner-champion__description {
     font-size: 16px;
   }
@@ -1121,27 +1243,27 @@ footer .row {
   #summoner-champions .row {
     max-width: 420px;
   }
-  
+
   .summoner-champion--wrapper {
     width: 120px;
     border-radius: 12px;
     box-shadow: 0 0 12px #ffffff;
   }
-  
+
   .summoner-champion--img {
     border-radius: 12px;
     border: 2px solid transparent;
   }
-  
+
   .summoner-champion__info--container {
     margin: 0 16px;
   }
-  
+
   .summoner-champion__title {
     font-size: 20px;
     margin-bottom: 4px;
   }
-  
+
   .summoner-champion__description {
     font-size: 12px;
   }

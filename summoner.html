@@ -14,7 +14,7 @@
     ></script>
     <script defer src="summoner.js"></script>
   </head>
-  <body>
+  <body id="summoner__body">
     <section class="landing-page">
       <nav>
         <div class="main__container">
@@ -48,7 +48,7 @@
           </li>
           <li class="nav__link valorant">
             <span class="tooltiptext">Next to be featured!</span>
-            <a href="summoner.html" class="nav__link--anchor not-allowed">
+            <a class="nav__link--anchor not-allowed">
               <figure class="riot__logo--wrapper">
                 <img
                   class="riot__logo--img link-red"
@@ -67,39 +67,44 @@
           </li>
         </ul>
       </nav>
-      <header>
+      <header id="summoner__header">
         <div class="container">
           <div class="row">
             <h1 class="header__title">Search for your Account</h1>
-            <form id="game-name__form" class="header__game-name" action="">
+            <form
+              id="game-name__form"
+              class="header__game-name"
+              action="/summoner.html"
+            >
               <div class="search__region--container">
                 <p class="search__para"><small>Region</small></p>
                 <div class="search__select--container">
-                  <select id="NA">
-                    <option value="na">English (NA)</option>
-                    <option value="me">Middle East (ME)</option>
-                    <option value="euw">Europe West (EUW)</option>
-                    <option value="eune">Europe Nordic & East (EUNE)</option>
-                    <option value="oce">Oceania (OCE)</option>
-                    <option value="kr">Korea (KR)</option>
-                    <option value="jp">Japan (JP)</option>
-                    <option value="br">Brazil (BR)</option>
-                    <option value="las">Latin America South (LAS)</option>
-                    <option value="lan">Latin America North (LAN)</option>
-                    <option value="ru">Russia (RU)</option>
-                    <option value="tr">Turkey (TR)</option>
-                    <option value="sea">Southeast Asia (SEA)</option>
-                    <option value="tw">Taiwan (TW)</option>
-                    <option value="vn">Vietnam (VN)</option>
+                  <select id="region">
+                    <option value="NA1">English (NA)</option>
+                    <option value="ME1">Middle East (ME)</option>
+                    <option value="EUW1">Europe West (EUW)</option>
+                    <option value="EUN1">Europe Nordic & East (EUNE)</option>
+                    <option value="OC1">Oceania (OCE)</option>
+                    <option value="KR">Korea (KR)</option>
+                    <option value="JP1">Japan (JP)</option>
+                    <option value="BR1">Brazil (BR)</option>
+                    <option value="LA2">Latin America South (LAS)</option>
+                    <option value="LA1">Latin America North (LAN)</option>
+                    <option value="RU">Russia (RU)</option>
+                    <option value="TR1">Turkey (TR)</option>
+                    <option value="PH2">Southeast Asia (SEA)</option>
+                    <option value="TW2">Taiwan (TW)</option>
+                    <option value="VN2">Vietnam (VN)</option>
                   </select>
                   <div class="search__arrow--wrapper">
-                    <i class="fa-solid fa-chevron-up search__arrow--img"></i>
+                    <i class="search__arrow--img fa-solid fa-chevron-down"></i>
                   </div>
                 </div>
               </div>
               <div class="search__name--container">
                 <p class="search__para"><small>Search</small></p>
                 <input
+                  id="game-name"
                   class="search__input"
                   name="game-name"
                   type="text"
@@ -107,7 +112,11 @@
                   required
                 />
               </div>
-              <button id="game-name__submit" class="search__submit">
+              <button
+                id="game-name__submit"
+                class="search__submit"
+                onclick="storeSummonerInfo()"
+              >
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </form>
@@ -115,33 +124,70 @@
         </div>
       </header>
     </section>
+
     <section id="summoner-champions">
       <canvas class="summoner__bg--img"></canvas>
       <div class="container">
         <div class="row">
-          <div class="summoner-champions__display">
-            <div class="summoner-champion--wrapper null-champ">
+          <div class="summoner summoner__loading">
+            <h1 class="summoner__loading--subtitle">Loading...</h1>
+          </div>
+          
+          <div class="summoner__profile">
+            <div class="summoner__profile--display">
+              <div class="summoner__profile--wrapper">
+                <img
+                  src="https://ddragon.leagueoflegends.com/cdn/15.2.1/img/profileicon/6831.png"
+                  class="summoner__profile--img"
+                />
+              </div>
+              <h1 class="summoner__profile--name">BlackŁance <span class="silver">#LAN</span></h1>
+              
+            </div>
+            <div class="summoner__profile--filter">
+              <h3 class="summoner__profile--filter-sub">Filter:</h3>
+              <select id="filter" class="summoner__filter" onchange="filterChamps(event)">
+                <option value="TOP_3" selected>Top 3 Champions</option>
+                <option value="TOP_5">Top 5 Champions</option>
+                <option value="TOP_10">Top 10 Champions</option>
+                <option value="A_Z_10">Alphabetical Top 10</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="summoner-champion__display champion_1">
+            <div class="summoner-champion--wrapper">
               <img
-                src="assets/null_champ-bg.jpg"
-                class="summoner-champion--img null-champ"
+                src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jhin_0.jpg"
+                class="summoner-champion--img champion--img"
               />
             </div>
             <div class="summoner-champion__info--container">
-              <h3 class="summoner-champion__title">Summoner not found</h3>
-              <p class="summoner-champion__description">
-                Verify that the summoner name and/or the #TAG is correctly
-                written.
+              <h2 class="summoner-champion__name">Jhin</h2>
+              <h3 class="summoner-champion__title champion__title">
+                The Virtuoso
+              </h3>
+              <p class="summoner-champion__description champion--description">
+                &emsp; Jhin is a meticulous criminal psychopath who believes
+                murder is art. Once an Ionian prisoner, but freed by shadowy
+                elements within Ionia's ruling council, the serial killer now
+                works as their cabal's assassin. Using his gun as his
+                paintbrush, Jhin creates works of artistic brutality, horrifying
+                victims and onlookers. He gains a cruel pleasure from putting on
+                his gruesome theater, making him the ideal choice to send the
+                most powerful of messages: terror.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
+
     <footer>
       <div class="container">
         <div class="row">
           <h2 class="footer__subtitle">
-            <span class="gold">LoL</span> Main Champions
+            LoL Main Champions
           </h2>
           <div class="footer__social--list">
             <a
