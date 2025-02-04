@@ -1,6 +1,6 @@
 /* ----- !!! IMPORTANT: UPDATE API KEY IF NEEDED !!! ----- */
-const APIKEY = "RGAPI-746eafc9-9050-4065-9c6f-efe53b58e204";
-var version = '15.2.1';
+const APIKEY = "RGAPI-dffa1378-9ba1-4fea-9a52-f1d6e04d7757";
+var version = "15.2.1";
 /* ----- Obtain variables from local storage ----- */
 var region = localStorage.getItem("region");
 var gameName = localStorage.getItem("gameName");
@@ -24,6 +24,48 @@ function storeSummonerInfo() {
   localStorage.setItem("tagLine", tagLine);
 }
 
+class ChampionRoster {
+  constructor(id, level, key, name, title) {
+    this.id = id;
+    this.level = level;
+    this.key = key;
+    this.name = name;
+    this.title = title;
+  }
+
+  setChampId(id) {
+    this.id = id;
+  }
+  setChampLevel(level) {
+    this.level = level;
+  }
+  setChampKey(key) {
+    this.key = key;
+  }
+  setChampName(name) {
+    this.name = name;
+  }
+  setChampTitle(title) {
+    this.title = title;
+  }
+
+  getChampId() {
+    return this.id;
+  }
+  getChampLevel() {
+    return this.level;
+  }
+  getChampKey() {
+    return this.key;
+  }
+  getChampName() {
+    return this.name;
+  }
+  getChampTitle() {
+    return this.title;
+  }
+}
+
 /* ----- Variables for main continent/region for API ----- */
 const americas = ["NA1", "LA2", "LA1", "BR1"];
 const aisa = ["KR", "JP1", "PH2", "TW2", "VN2", "OC1"];
@@ -44,15 +86,25 @@ var summonerPUUID = "";
 var iconId = 0;
 var summonerLevel = 0;
 
-/* ----- FIRST API DATA AQUISITIONS ----- */
-async function renderSummoner() {
+/* Change this later */ var filter = 3;
+
+/* ----- API DATA AQUISITIONS ----- */
+async function renderAPIs() {
+  /* API to obtain the latest version of the game */
+  const apiVersion = await fetch(
+    `https://ddragon.leagueoflegends.com/api/versions.json`
+  );
+  const apiVersionData = await apiVersion.json();
+  version = apiVersionData[0];
+  console.log(version);
+
   /* API to obtain the summoners PUUID via Game Name and Tag */
   const summonerId = await fetch(
     `https://${mainRegion}.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${gameName}/${tagLine}?api_key=${APIKEY}`
   );
   const summonerIdData = await summonerId.json();
-  console.log(summonerIdData);
   summonerPUUID = summonerIdData.puuid;
+  console.log(summonerIdData);
 
   /* API to obtain the summoners icon and level */
   const summonerProfile = await fetch(
@@ -63,29 +115,76 @@ async function renderSummoner() {
   iconId = summonerProfileData.profileIconId;
   summonerLevel = summonerProfileData.summonerLevel;
 
+  /* API to obtain the champion ID and mastery level via PUUID */
+  const champMastery = await fetch(
+    `https://${region}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/${summonerPUUID}?api_key=${APIKEY}`
+  );
+  const champMasteryData = await champMastery.json();
+  let champMasteryFiltered = champMasteryData.slice(0, filter);
+  console.log(champMasteryFiltered);
+
+  let dynamicChamps = new Map();
+
+  for (var key in champMasteryFiltered) {
+    let tempId = champMasteryFiltered[key].championId;
+    let tempLevel = champMasteryFiltered[key].championLevel;
+
+    dynamicChamps.set(tempId, tempLevel);
+  }
+
+  console.log(dynamicChamps);
+
+  /* API to obtain the names of the champions that exist in the game */
+  const championListLive = await fetch(
+    `https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`
+  );
+  const championListLiveData = await championListLive.json();
+  const champInfo = championListLiveData.data;
+
+  let championsLive = new Map();
+  for (var key in champInfo) {
+    let tempName = champInfo[key].name;
+    let tempId = champInfo[key].key;
+    let tempTitle = champInfo[key].title;
+    /* console.log(tempName + ": " + tempId + "," + tempTitle); */
+
+    dynamicChamps.set(tempId, tempName);
+
+    for (var k in champInfo[key]) {
+      console.log(`${k}: ${champInfo[key][k]}`)
+    }
+  }
+
+
+
+  /* ----- Remove the Loading HTML from the webpage ----- */
+  const summonerLoading = document.querySelector(".summoner");
+  summonerLoading.classList.remove("summoner__loading");
+
   /* HTML TO CREATE THE SUMMONER PROFILE (Summoner.html has it) */
-
-  renderChampions();
+  /* `<div class="summoner__profile">
+            <div class="summoner__profile--display">
+              <div class="summoner__profile--wrapper">
+                <img
+                  src="https://ddragon.leagueoflegends.com/cdn/${version}/img/profileicon/${iconId}.png"
+                  class="summoner__profile--img"
+                />
+              </div>
+              <h1 class="summoner__profile--name">${gameName} <span class="silver">#${tagLine}</span></h1>
+            </div>
+            <div class="summoner__profile--filter">
+              <h3 class="summoner__profile--filter-sub">Filter:</h3>
+              <select id="filter" class="summoner__filter" onchange="filterChamps(event)">
+                <option value="TOP_3" selected>Top 3 Champions</option>
+                <option value="TOP_5">Top 5 Champions</option>
+                <option value="TOP_10">Top 10 Champions</option>
+                <option value="A_Z_10">Alphabetical Top 10</option>
+              </select>
+            </div>
+          </div>` */
 }
 
-/* Change this later */ var filter = 10;
 
-class championInfo {
-    constructor(id, name, level) {
-        this.id = id;
-        this.name = name;
-        this.level = level;
-    }
-    getChampId() {
-        return this.id;
-    }
-    getChampName() {
-        return this.name;
-    }
-    getChampLevel() {
-        return this.level;
-    }
-}
 
 /* var championsLive = [];
 function getChamps(champList) {
@@ -94,47 +193,9 @@ function getChamps(champList) {
     })
 } */
 
-async function renderChampions() {
-    /* API to obtain the latest version of the game */
-    const apiVersion = await fetch (`https://ddragon.leagueoflegends.com/api/versions.json`);
-    const apiVersionData = await apiVersion.json();
-    version = apiVersionData[0];
-    console.log(version);
-
-    /* API to obtain the names of the champions that exist in the game */
-    const championListLive = await fetch(
-        `https://ddragon.leagueoflegends.com/cdn/${version}/data/en_US/champion.json`
-    );
-    const championListLiveData = await championListLive.json();
-    console.log(championListLiveData);
-    const champNameId = championListLiveData.data;
-    console.log(champNameId);
-
-    /* const champs = champNameId.map(champ => {
-        return {
-            name: champ.id,
-            id: champ.key,
-        }
-    }); */
-
-    /* API to obtain the champion ID and mastery level via PUUID */
-    const championListPUUID = await fetch(
-        `https://${region}.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-puuid/${summonerPUUID}?api_key=${APIKEY}`
-    );
-    const championListPUUIDData = await championListPUUID.json();
-    let championListPUUIDFiltered = championListPUUIDData.slice(0, filter);
-    console.log(championListPUUIDFiltered);
-
-    let championId = [];
-    for(let i = 0; i < filter; i++){
-        championId.push(championListPUUIDFiltered[i].championId);
-        /* championListID.push(championListData[i].championId)
-        championListLevel.push(championListData[i].championLevel) */
-    }
-    console.log(championId);
-}
-
-renderSummoner();
+setTimeout(() => {
+  renderAPIs();
+}, Math.random() * 1500 + 2500);
 
 async function renderChampions1(status, filter) {
   var topChampsAmmount = filter;
